@@ -11,7 +11,7 @@ const MovieList: FC<IMovieList> = ({ link, title, movies }) => {
 			{movies.map((movie) => (
 				<MovieItem key={movie._id} movie={movie} />
 			))}
-			<Link href={link} target="_blank" className={styles.button}>
+			<Link href={link} className={styles.button}>
 				See more
 			</Link>
 		</div>

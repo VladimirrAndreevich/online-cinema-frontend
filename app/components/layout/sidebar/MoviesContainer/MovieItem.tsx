@@ -10,7 +10,7 @@ import MaterialIcon from "@/components/ui/MaterialIcon";
 const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 	return (
 		<div className={styles.item}>
-			<Link href={getMovieUrl(movie.slug)} target="_blank">
+			<Link href={getMovieUrl(movie.slug)}>
 				<Image
 					width={65}
 					height={97}
