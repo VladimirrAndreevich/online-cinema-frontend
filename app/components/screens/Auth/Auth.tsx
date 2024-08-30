@@ -8,6 +8,7 @@ import Meta from "@/utils/meta/Meta";
 import Heading from "@/components/ui/heading/Heading";
 import Button from "@/components/ui/form-elements/Button";
 import AuthFields from "./AuthFields";
+import { useActions } from "@/hooks/useActions";
 
 const Auth = () => {
 	useAuthRedirect();
@@ -25,12 +26,7 @@ const Auth = () => {
 		mode: "onChange",
 	});
 
-	const login = (data: any) => {
-		alert(`Login ${data}`);
-	};
-	const register = (data: any) => {
-		alert(`Register ${data}`);
-	};
+	const { login, register } = useActions();
 
 	const onSubmit: SubmitHandler<IAuthInput> = (data) => {
 		if (type === "login") {
