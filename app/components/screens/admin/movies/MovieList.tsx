@@ -9,14 +9,24 @@ import AdminTable from "@/components/ui/AdminTable/AdminTableComp/AdminTable";
 import { useMovies } from "./useMovies";
 
 const MovieList: FC = () => {
-	const { handleSearch, isLoading, searchTerm, data, deleteAsync } =
-		useMovies();
+	const {
+		handleSearch,
+		isLoading,
+		searchTerm,
+		data,
+		deleteAsync,
+		createAsync,
+	} = useMovies();
 
 	return (
 		<Meta title="Movies">
 			<AdminNavigation />
 			<Heading title="Movies" />
-			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
+			<AdminHeader
+				handleSearch={handleSearch}
+				searchTerm={searchTerm}
+				onClick={createAsync}
+			/>
 			<AdminTable
 				tableItems={data || []}
 				headerItems={["Title", "Genre", "Rating"]}

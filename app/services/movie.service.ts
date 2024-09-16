@@ -1,4 +1,5 @@
 import axios, { axiosClassic } from "@/api/interceptors";
+import { IMovieEditInput } from "@/components/screens/admin/movie/movie-edit.interface";
 import { getMoviesUrl } from "@/config/api.config";
 import { IMovie } from "@/shared/types/movie.types";
 

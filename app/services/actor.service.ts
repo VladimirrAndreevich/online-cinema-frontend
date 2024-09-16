@@ -2,6 +2,7 @@ import axios, { axiosClassic } from "api/interceptors";
 
 import { IActor } from "@/shared/types/movie.types";
 import { getActorsUrl } from "@/config/api.config";
+import { IActorEditInput } from "@/components/screens/admin/actor/actor-edit.interface";
 
 export const ActorService = {
 	async getBySlug(slug: string) {
