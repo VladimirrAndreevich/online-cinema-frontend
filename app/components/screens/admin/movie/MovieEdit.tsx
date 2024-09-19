@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { FC } from "react";
 import { Controller, useForm } from "react-hook-form";
 
-import formStyles from "@/components/shared/admin/adminForm.module.scss";
+import formStyles from "@/ui/form-elements/adminForm.module.scss";
 
 import Button from "@/ui/form-elements/Button";
 import Field from "@/ui/form-elements/Field";
@@ -18,8 +18,9 @@ import { useMovieEdit } from "./useMovieEdit";
 import Meta from "@/utils/meta/Meta";
 import AdminNavigation from "@/components/ui/AdminNavigation/AdminNavigation";
 import SkeletonLoader from "@/components/ui/SkeletonLoader";
+import UploadField from "@/components/ui/form-elements/UploadField/UploadField";
 
-const DynamicSelect = dynamic(() => import("@/ui/select/Select"), {
+const DynamicSelect = dynamic(() => import("@/ui/Select/Select"), {
 	ssr: false,
 });
 
@@ -134,7 +135,7 @@ const MovieEdit: FC = () => {
 									placeholder="Poster"
 									error={error}
 									folder="movies"
-									image={value}
+									value={value}
 									onChange={onChange}
 								/>
 							)}
@@ -155,7 +156,7 @@ const MovieEdit: FC = () => {
 									placeholder="Big poster"
 									error={error}
 									folder="movies"
-									image={value}
+									value={value}
 									onChange={onChange}
 								/>
 							)}
@@ -176,7 +177,7 @@ const MovieEdit: FC = () => {
 									placeholder="Video"
 									error={error}
 									folder="movies"
-									image={value}
+									value={value}
 									onChange={onChange}
 									style={{ marginTop: -25 }}
 									isNoImage

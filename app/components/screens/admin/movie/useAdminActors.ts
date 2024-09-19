@@ -1,3 +1,4 @@
+import { IOption } from "@/ui/Select/select.interface";
 import { ActorService } from "@/services/actor.service";
 import { toastError } from "@/utils/api/toastError";
 import { useQuery } from "react-query";
