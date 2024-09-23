@@ -2,7 +2,11 @@ import { FC } from "react";
 import { IMenu } from "./menu.interface";
 import styles from "./Menu.module.scss";
 import MenuItem from "./MenuItem";
-import AuthItems from "./Auth/AuthItems";
+import dynamic from "next/dynamic";
+
+const DynamicAuthItems = dynamic(() => import("./Auth/AuthItems"), {
+	ssr: false,
+});
 
 const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 	return (
@@ -12,7 +16,7 @@ const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 				{items.map((item, index) => (
 					<MenuItem key={index} item={item} />
 				))}
-				{title === "General" && <AuthItems />}
+				{title === "General" && <DynamicAuthItems />}
 			</ul>
 		</div>
 	);
