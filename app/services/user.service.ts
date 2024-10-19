@@ -3,6 +3,7 @@ import axios from "api/interceptors";
 import { IMovie } from "@/shared/types/movie.types";
 import { IUser } from "@/shared/types/user.types";
 import { getUsersUrl } from "@/config/api.config";
+import { IProfileInput } from "@/components/screens/profile/profile.interface";
 
 export const UserService = {
 	async getProfile() {
