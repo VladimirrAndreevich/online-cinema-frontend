@@ -4,8 +4,13 @@
 	@apply flex items-center overflow-x-auto flex-nowrap py-3;
 	-webkit-overflow-scrolling: touch;
 
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 	&::-webkit-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
 		display: none;
+		width: 0;
 	}
 }
 

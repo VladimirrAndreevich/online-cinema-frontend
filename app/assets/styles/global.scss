@@ -22,6 +22,16 @@ a {
 	box-sizing: border-box;
 }
 
+/* width */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	@apply bg-primary;
+}
+
 :root {
 	--primary-color: #e30b13;
 }
