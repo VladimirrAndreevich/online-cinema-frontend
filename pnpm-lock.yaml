@@ -11,6 +11,9 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^2.2.7
         version: 2.2.7(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      '@types/react-star-rating-component':
+        specifier: ^1.4.4
+        version: 1.4.4
       '@types/react-transition-group':
         specifier: ^4.4.11
         version: 4.4.11
@@ -71,6 +74,9 @@ importers:
       react-select:
         specifier: ^5.8.0
         version: 5.8.0(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-star-rating-component:
+        specifier: ^1.4.1
+        version: 1.4.1(react@18.3.1)
       react-transition-group:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -448,6 +454,9 @@ packages:
 
   '@types/react-redux-toastr@8.0.0':
     resolution: {integrity: sha512-QU2W1ik/h5vgonidIhoM+2scCTFrVfbtp8y7XUW0DCkat8TJE/DUQsIiFB3XlhIKV+C0aj2qEUiYfLqYA+d8jA==}
+
+  '@types/react-star-rating-component@1.4.4':
+    resolution: {integrity: sha512-sRzK4a18SqXqpR8+U4fq5nXfcHrtULxDSz6QgP+MB6NolWvEDrcqn2v+w2RjmH8s4nwUzi7tfDFMjd4hZHxqTA==}
 
   '@types/react-transition-group@4.4.11':
     resolution: {integrity: sha512-RM05tAniPZ5DZPzzNFP+DmrcOdD0efDUxMy3145oljWSl3x9ZV5vhme98gTxFrj2lhXvmGNnUiuDyJgY9IKkNA==}
@@ -1206,6 +1215,12 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
+  react-star-rating-component@1.4.1:
+    resolution: {integrity: sha512-i0YEvQzToS0s0GDkxn01Jy4EeLpVEyh023NXJTJ+/1+xkvhpACyD4d1YeBhYWZab53ppUnUxs5gmp75gJr3khA==}
+    engines: {node: '>=8.0.0', npm: '>=5.5.0'}
+    peerDependencies:
+      react: ^16.2.0
+
   react-transition-group@4.4.5:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
     peerDependencies:
@@ -1822,6 +1837,10 @@ snapshots:
     dependencies:
       '@types/react': 18.3.3
       redux: 5.0.1
+
+  '@types/react-star-rating-component@1.4.4':
+    dependencies:
+      '@types/react': 18.3.3
 
   '@types/react-transition-group@4.4.11':
     dependencies:
@@ -2552,6 +2571,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
+
+  react-star-rating-component@1.4.1(react@18.3.1):
+    dependencies:
+      classnames: 2.5.1
+      prop-types: 15.8.1
+      react: 18.3.1
 
   react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:

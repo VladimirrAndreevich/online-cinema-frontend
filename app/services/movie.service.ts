@@ -44,7 +44,7 @@ export const MovieService = {
 	},
 
 	async updateCountOpened(slug: string) {
-		return axiosClassic.post(getMoviesUrl("/update-count-opened"), {
+		return axiosClassic.patch(getMoviesUrl("/update-count-opened"), {
 			slug,
 		});
 	},

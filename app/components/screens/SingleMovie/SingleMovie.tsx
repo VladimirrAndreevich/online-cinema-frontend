@@ -6,15 +6,18 @@ import SubHeading from "@/components/ui/heading/SubHeading";
 import Gallery from "@/components/ui/gallery/Gallery";
 import Content from "./Content/Content";
 import dynamic from "next/dynamic";
+import { useUpdateCountOpened } from "./useUpdateCountOpened";
 
 const DynamicPlayer = dynamic(() => import("@/ui/VideoPlayer/VideoPlayer"), {
 	ssr: false,
 });
 
+const DynamicRateMovie = dynamic(() => import("./RateMovie/RateMovie"), {
+	ssr: false,
+});
+
 const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
-	useEffect(() => {
-		console.log(movie.videoUrl);
-	}, []);
+	useUpdateCountOpened(movie.slug);
 
 	return (
 		<Meta title={movie.title || ""} description={`Watch ${movie.title}`}>
@@ -30,7 +33,7 @@ const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 				<Gallery items={similarMovies} />
 			</div>
 
-			{/* Rating */}
+			<DynamicRateMovie slug={movie.slug} _id={movie._id} />
 		</Meta>
 	);
 };
