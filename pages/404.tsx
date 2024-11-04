@@ -1,7 +1,7 @@
 import Heading from "@/components/ui/heading/Heading";
 import Meta from "@/utils/meta/Meta";
 
-export default function Custom404() {
+export default function Error404() {
 	return (
 		<div>
 			<Meta title="Page not found">
