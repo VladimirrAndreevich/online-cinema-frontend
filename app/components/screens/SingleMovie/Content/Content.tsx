@@ -6,12 +6,13 @@ import styles from "./Content.module.scss";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import { getActorUrl, getGenreUrl } from "@/config/url.config";
 import ContentList from "./ContentList/ContentList";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 const Content: FC<{ movie: IMovie }> = ({ movie }) => {
 	return (
 		<div className={styles.content}>
 			<h1>{movie.title}</h1>
-			{/* <FavoriteButton movieId={movie._id} /> */}
+			<FavoriteButton movieId={movie._id} />
 			<div className={styles.rating}>
 				<MaterialIcon name="MdStarRate" />
 				<span>{movie.rating.toFixed(1)}</span>
