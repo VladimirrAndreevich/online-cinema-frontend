@@ -1,5 +1,6 @@
 import axios, { axiosClassic } from "@/api/interceptors";
 import { IGenreEditInput } from "@/components/screens/admin/genre/genreEdit.interface";
+import { ICollection } from "@/components/screens/collections/collections.types";
 import { getGenresUrl } from "@/config/api.config";
 import { IGenre } from "@/shared/types/movie.types";
 

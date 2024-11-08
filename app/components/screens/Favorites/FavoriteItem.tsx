@@ -5,11 +5,13 @@ import { FC } from "react";
 import styles from "./Favorites.module.scss";
 import { IFavoriteItem } from "./favorites.interface";
 import FavoriteButton from "../SingleMovie/FavoriteButton/FavoriteButton";
+import { useAuth } from "@/hooks/useAuth";
 
 const FavoriteItem: FC<{ item: IFavoriteItem }> = ({ item }) => {
+	const { user } = useAuth();
 	return (
 		<div className={styles.itemWrapper}>
-			<FavoriteButton movieId={item._id} />
+			{user && <FavoriteButton movieId={item._id} />}
 			<Link href={item.url} className={styles.item}>
 				<Image
 					alt={item.name}

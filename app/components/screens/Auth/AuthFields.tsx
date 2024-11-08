@@ -1,7 +1,7 @@
 import Field from "@/components/ui/form-elements/Field";
 import { validEmail } from "@/shared/regex";
 import { FC } from "react";
-import { FormState, UseFormRegister } from "react-hook-form";
+import { FieldError, FormState, UseFormRegister } from "react-hook-form";
 
 interface IAuthFields {
 	register: UseFormRegister<any>;
@@ -25,7 +25,7 @@ const AuthFields: FC<IAuthFields> = ({
 					},
 				})}
 				placeholder="Email"
-				error={errors.email}
+				error={errors.email as FieldError | undefined}
 			/>
 			<Field
 				{...register(
@@ -42,7 +42,7 @@ const AuthFields: FC<IAuthFields> = ({
 				)}
 				placeholder="Password"
 				type="password"
-				error={errors.password}
+				error={errors.email as FieldError | undefined}
 			/>
 		</>
 	);
