@@ -23,8 +23,6 @@ export const getStaticProps: GetStaticProps = async () => {
 			revalidate: 60,
 		};
 	} catch (e) {
-		// console.log(errorCatch(e))
-
 		return {
 			props: {},
 			// notFound: true,

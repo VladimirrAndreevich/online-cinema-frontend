@@ -31,8 +31,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 			fallback: "blocking",
 		};
 	} catch (e) {
-		// console.log(errorCatch(e))
-
 		return {
 			paths: [],
 			fallback: false,
@@ -51,8 +49,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 			revalidate: 60,
 		};
 	} catch (e) {
-		// console.log(errorCatch(e))
-
 		return {
 			props: {},
 			// notFound: true,

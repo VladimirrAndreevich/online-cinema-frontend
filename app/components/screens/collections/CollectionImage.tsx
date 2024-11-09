@@ -5,10 +5,6 @@ import { FC, useEffect } from "react";
 const CollectionImage: FC<{ collection: ICollection }> = ({
 	collection: { image, title },
 }) => {
-	useEffect(() => {
-		console.log(image);
-	}, []);
-
 	return <Image alt={title} src={image} layout="fill" draggable={false} />;
 };
 

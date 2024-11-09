@@ -56,8 +56,6 @@ export const getStaticProps: GetStaticProps = async () => {
 			} as IHome,
 		};
 	} catch (error) {
-		console.log(errorCatch(error));
-
 		return {
 			props: {
 				actors: [],

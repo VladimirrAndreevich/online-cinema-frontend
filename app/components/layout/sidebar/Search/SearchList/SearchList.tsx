@@ -6,7 +6,6 @@ import { getMovieUrl } from "@/config/url.config";
 import Image from "next/image";
 
 const SearchList: FC<{ movies: IMovie[] }> = ({ movies }) => {
-	movies.map((movie) => console.log(movie.poster));
 	return (
 		<div className={styles.list}>
 			{movies.length ? (
