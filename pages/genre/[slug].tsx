@@ -14,6 +14,7 @@ interface IGenrePage {
 
 const GenrePage: NextPage<IGenrePage> = ({ genre, movies }) => {
 	// return genre ? <Genre genre={genre} movies={movies} /> : <Error404 />;
+	console.log(movies);
 	return genre ? (
 		<Catalog
 			movies={movies || []}

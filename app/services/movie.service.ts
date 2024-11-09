@@ -33,9 +33,9 @@ export const MovieService = {
 		return axiosClassic.get<IMovie[]>(getMoviesUrl(`/by-actor/${actorId}`));
 	},
 
-	async getByGenres(genreIds: string[]) {
+	async getByGenres(genresIds: string[]) {
 		return axiosClassic.post<IMovie[]>(getMoviesUrl(`/by-genres`), {
-			genreIds,
+			genresIds,
 		});
 	},
 
