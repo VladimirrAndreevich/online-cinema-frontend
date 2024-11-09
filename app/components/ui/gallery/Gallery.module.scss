@@ -18,6 +18,8 @@
 	@apply relative transition-transform flex items-end shadow-lg rounded-layout overflow-hidden;
 	flex: 0 0 auto;
 
+	@apply w-full;
+
 	&:hover {
 		transform: translateY(-5px);
 	}
@@ -28,8 +30,8 @@
 	}
 
 	&.horizontal {
-		@apply mb-8 h-44;
-		width: 31%;
+		@apply h-44;
+		// width: 31%;
 	}
 
 	&.withText {

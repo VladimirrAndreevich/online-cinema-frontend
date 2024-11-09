@@ -7,7 +7,7 @@ const PopularMovies = () => {
 	const { isLoading, data: popularMovies } = useQuery(
 		"Popular movies in sidebar",
 		() => MovieService.getMostPopularMovies(),
-		{ select: (data) => data.slice(0, 5) },
+		{ select: (data) => data.slice(0, 4) },
 	);
 
 	return isLoading ? (

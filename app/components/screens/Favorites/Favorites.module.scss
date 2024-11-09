@@ -1,7 +1,7 @@
-@import '../../../assets/styles/variables';
+@import "../../../assets/styles/variables";
 
 .favorites {
-	@apply flex flex-wrap mt-12;
+	@apply grid grid-cols-3 gap-8 mt-12;
 }
 
 .containerLoader {
@@ -19,8 +19,7 @@
 }
 
 .itemWrapper {
-	@apply relative mb-8 h-44 mr-8 animate-fade transition-transform hover:-translate-y-3;
-	width: 31%;
+	@apply relative h-44 mr-8 w-full animate-fade transition-transform hover:-translate-y-3;
 
 	&:nth-child(3n) {
 		@apply mr-0;
