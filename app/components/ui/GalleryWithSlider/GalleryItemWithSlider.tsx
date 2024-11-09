@@ -3,17 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
-import styles from "./Gallery.module.scss";
-import { IGalleryItemProps } from "./gallery.interface";
+import styles from "./GalleryWithSlider.module.scss";
+import { IGalleryItem } from "../gallery/gallery.interface";
 
-const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
+const GalleryItemWithSlider: FC<{ item: IGalleryItem }> = ({ item }) => {
 	return (
 		<Link
 			href={item.url}
-			className={cn(styles.item, {
+			className={cn(styles.link, {
 				[styles.withText]: item.content,
-				[styles.horizontal]: variant === "horizontal",
-				[styles.vertical]: variant === "vertical",
 			})}
 		>
 			<Image
@@ -35,4 +33,4 @@ const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
 	);
 };
 
-export default GalleryItem;
+export default GalleryItemWithSlider;

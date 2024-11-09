@@ -1,0 +1,45 @@
+@import "../../../assets/styles/variables";
+
+.swiper {
+	padding-bottom: 1.75rem !important;
+	--swiper-scrollbar-drag-bg-color: #e30b12b4;
+}
+
+.item {
+	@apply shadow-lg mt-2;
+
+	& .link {
+		@apply relative top-0 flex items-end justify-center w-full h-full rounded-layout overflow-hidden;
+
+		transition-property: top;
+		transition-timing-function: ease-in-out;
+		transition-duration: 200ms;
+
+		&:hover {
+			@apply -top-2;
+		}
+
+		&.withText {
+			@include fade-bg-gradient(0deg);
+			&::before {
+				@apply rounded-layout;
+			}
+		}
+
+		& img {
+			@apply object-cover rounded-layout;
+		}
+	}
+}
+
+.content {
+	@apply relative z-2 text-center m-3 w-full;
+
+	.title {
+		@apply font-semibold mb-1 text-white text-shadow;
+	}
+
+	.subTitle {
+		@apply text-gray-500 text-shadow;
+	}
+}
