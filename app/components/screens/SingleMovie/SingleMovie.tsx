@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { IMoviePage } from "../../../../pages/movie/[slug]";
 import Meta from "@/utils/meta/Meta";
 import Banner from "@/components/ui/banner/Banner";
@@ -7,17 +7,21 @@ import Content from "./Content/Content";
 import dynamic from "next/dynamic";
 import { useUpdateCountOpened } from "./useUpdateCountOpened";
 import GalleryWithSlider from "@/components/ui/GalleryWithSlider/GaleryWithSlider";
-
-const DynamicPlayer = dynamic(() => import("@/ui/VideoPlayer/VideoPlayer"), {
-	ssr: false,
-});
+import CustomVideoPlayer from "@/components/ui/CustomVideoPlayer/CustomVideoPlayer";
 
 const DynamicRateMovie = dynamic(() => import("./RateMovie/RateMovie"), {
 	ssr: false,
 });
 
 const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
+	const [isClient, setIsClient] = useState(false);
 	useUpdateCountOpened(movie.slug);
+
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
+
+	if (!isClient) return null;
 
 	return (
 		<Meta title={movie.title || ""} description={`Watch ${movie.title}`}>
@@ -26,7 +30,7 @@ const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 				Detail={() => <Content movie={movie} />}
 			/>
 
-			<DynamicPlayer videoSource={movie.videoUrl} slug={movie.slug} />
+			<CustomVideoPlayer videoSource={movie.videoUrl} slug={movie.slug} />
 
 			<div className="mt-12">
 				<SubHeading title="Similar movies" />

@@ -4,7 +4,9 @@ import { FC } from "react";
 
 import * as MaterialIcons from "react-icons/md";
 
-const MaterialIcon: FC<{ name: TypeMaterialIconName }> = ({ name }) => {
+const MaterialIcon: FC<{
+	name: TypeMaterialIconName;
+}> = ({ name }) => {
 	const { isRenderClient } = useRenderClient();
 
 	const IconComponent = MaterialIcons[name];

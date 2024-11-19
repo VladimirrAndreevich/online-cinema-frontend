@@ -1,0 +1,129 @@
+.wrapperAuth {
+	@apply mt-12 h-96 rounded-2xl overflow-hidden shadow-xl relative;
+}
+
+.wrapper {
+	@apply relative mt-12 rounded-2xl overflow-hidden shadow-xl cursor-default;
+
+	&.hideCursor {
+		@apply cursor-none;
+	}
+}
+
+.player {
+	@apply block;
+
+	& video {
+		@apply animate-fade;
+	}
+}
+
+.progressBar {
+	@apply absolute left-4 right-4 bottom-14 rounded-layout opacity-60 bg-gray-600;
+	height: 0.313rem;
+	@apply cursor-pointer;
+
+	transition-property: opacity;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
+
+	z-index: 1;
+
+	&:hover {
+		@apply opacity-100;
+	}
+
+	&.hide {
+		@apply opacity-0;
+	}
+
+	& .hoverTime {
+		@apply absolute bottom-2;
+		@apply text-white;
+
+		transform: translateX(-50%);
+	}
+}
+
+.controls {
+	@apply absolute bottom-3 left-6 right-6  gap-2 flex items-center;
+	z-index: 1;
+
+	transition-property: opacity;
+	transition-timing-function: ease-in-out;
+	transition-duration: 400ms;
+
+	&.hide {
+		@apply opacity-0;
+	}
+
+	& button svg {
+		@apply w-7 h-7 fill-white opacity-60;
+		transition-property: fill, opacity;
+		transition-timing-function: ease-in-out;
+		transition-duration: 200ms;
+		&:hover {
+			@apply fill-primary opacity-100;
+		}
+	}
+
+	& .playButton svg {
+		@apply w-10 h-10;
+	}
+
+	& .muteButton {
+		@apply ml-2;
+	}
+
+	& .fullscreenButton {
+		@apply ml-auto;
+	}
+
+	& .time {
+		@apply ml-2;
+		@apply text-white opacity-80;
+	}
+
+	& .volumeSlider {
+		-webkit-appearance: none;
+		appearance: none;
+
+		@apply w-20 h-1.5 bg-white;
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+
+			@apply w-1.5 h-3.5;
+			@apply bg-gray-600 cursor-pointer;
+
+			transition-property: background-color;
+			transition-timing-function: ease-in-out;
+			transition-duration: 200ms;
+
+			&:hover {
+				@apply bg-primary;
+			}
+		}
+	}
+}
+
+.bigPlayButton {
+	@apply absolute top-0 left-0 right-0 bottom-16 pt-16 flex justify-center items-center cursor-default outline-none;
+
+	&.hideCursor {
+		@apply cursor-none;
+	}
+}
+
+.bigPlayButton svg {
+	@apply w-28 h-28;
+	@apply fill-white opacity-80 cursor-pointer;
+
+	transition-property: fill, opacity;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
+
+	&:hover {
+		@apply fill-primary opacity-100;
+	}
+}
