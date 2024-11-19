@@ -5,13 +5,12 @@ import { useAuth } from "@/hooks/useAuth";
 import MovieList from "../MovieList";
 import SkeletonLoader from "@/components/ui/SkeletonLoader";
 import { useFavorites } from "@/components/screens/Favorites/useFavorites";
-import NotAuthFavorites from "./NotAuthFaorites";
 
 const FavoriteMovieList: FC = () => {
 	const { isLoading, favoritesMovies } = useFavorites();
 	const { user } = useAuth();
 
-	if (!user) return <NotAuthFavorites />;
+	if (!user) return null;
 
 	return isLoading ? (
 		<div className="mt-11">
